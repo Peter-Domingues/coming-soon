@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Sublimeh</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+
+    <!-- Font -->
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CPoppins:400,500"
+      rel="stylesheet"
+    />
+
+    <link href="common-css/ionicons.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="common-css/jquery.classycountdown.css" />
+
+    <link href="05-comming-soon/css/styles.css" rel="stylesheet" />
+
+    <link href="05-comming-soon/css/responsive.css" rel="stylesheet" />
+  </head>
+  <body>
+    <script type="module">
+      var loc = window.location.href + "";
+      if (loc.indexOf("http://") == 0) {
+        window.location.href = loc.replace("http://", "https://");
+      }
+    </script>
+    <div class="main-area-wrapper">
+      <div class="main-area center-text">
+        <video autoplay muted loop id="myVideo">
+          <source src="./images/video.mp4" type="video/mp4" />
+        </video>
+        <div class="display-table" style="position: fixed">
+          <div class="display-table-cell">
+            <div class="logo-container">
+              <img class="logo" src="./images/Sublimeh_L_C.png" />
+            </div>
+            <ul class="social-btn">
+              <li class="list-heading" id="follow">Follow us for updates</li>
+              <li>
+                <a
+                  href="https://www.instagram.com/sublimeh.hair/"
+                  target="_blank"
+                  ><i class="ion-social-instagram-outline"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+          <!-- display-table -->
+        </div>
+        <!-- display-table-cell -->
+      </div>
+      <!-- main-area -->
+    </div>
+    <!-- main-area-wrapper -->
+
+    <!-- SCIPTS -->
+
+    <script src="common-js/jquery-3.1.1.min.js"></script>
+
+    <script src="common-js/scripts.js"></script>
+
+    <script>
+      function changeLanguage(lang) {
+        location.hash = lang;
+        location.reload();
+      }
+
+      var language = {
+        eng: {
+          welcome:
+            "We’re rebuilding our website to provide the best online" +
+            " Real Estate experience possible.",
+          bye: "Stay tuned!",
+          title: "Coming Soon",
+          follow: "Follow us for updates",
+        },
+        pt: {
+          welcome:
+            "Estamos redesenhando nosso site para oferecer a melhor experiência possível" +
+            " em Real Estate.",
+          bye: "Até logo!",
+          title: "Em breve",
+          follow: "Siga-nos para atualizações",
+        },
+      };
+
+      var us = document.getElementById("usFlag");
+      var pt = document.getElementById("brFlag");
+      // Check if a hash value exists in the URL
+      if (window.location.hash) {
+        // Set the content of the webpage
+        // depending on the hash value
+        if (window.location.hash == "#eng") {
+          siteContent.textContent = language.eng.welcome;
+          title.textContent = language.eng.title;
+          bye.textContent = language.eng.bye;
+          follow.textContent = language.eng.follow;
+          pt.style["filter"] = "grayscale(100%)";
+        } else if (window.location.hash == "#pt-BR") {
+          siteContent.textContent = language.pt.welcome;
+          title.textContent = language.pt.title;
+          bye.textContent = language.pt.bye;
+          follow.textContent = language.pt.follow;
+          us.style["filter"] = "grayscale(100%)";
+        }
+      }
+    </script>
+  </body>
+</html>
